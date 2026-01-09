@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertisseur d'unités</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Convertisseur de devises </h1>
+        <div class="devises-container">
+            <select id="devises1">
+                <option value="EUR" selected>EUR</option>
+                <option value="XOF">XOF</option>
+                <option value="USD">USD</option>
+            </select>
+            <input type="number" id="montant1" value="1" min="0">
+        </div>
+    
+        <div class="devises-container">
+            <select id="devises2">
+                <option value="EUR">EUR</option>
+                <option value="XOF" selected>XOF</option>
+                <option value="USD">USD</option>
+            </select>
+            <input type="number" id="montant2" value="1" min="0" disabled>
+        </div>
+        <p>Thank You !</p>
+    </div>
+    <br>🕳<br>
+    <div class="conteneur">
+        <h1>Convertisseur de poids</h1>
+        <div class="poids-container">
+            <select id="poids1">
+                <option value="Kilogramme">Kg</option>
+            </select>
+            <input type="number" id="inputKilogramme" value="1" min="0" oninput="weightConverter(this.value)" onchange="weightConverter(this.value)">    
+        </div>
+
+        <div class="poids-container">
+            <select id="poids2">
+                <option value="Gramme">g</option>
+            </select>
+            <input type="number" disabled id="inputGramme" value="1000" min="0" oninput="weightConverter(this.value)" onchange="weightConverter(this.value)">    
+        </div>
+        <p>Thank You !</p>
+    </div>
+
+    <script>
+function weightConverter(val) {
+    // Conversion : 1 kilogramme = 1000 grammes
+    const grammes = val * 1000;
+
+    // Injection du résultat dans l'input grammes
+    document.getElementById("inputGramme").value = grammes;
+}
+</script>
+   <script src="script.js"></script> 
+</body>
+</html>
